@@ -1,12 +1,17 @@
 import React from 'react'
-import { SafeAreaView, View, Text } from 'react-native'
+import { SafeAreaView, ScrollView } from 'react-native'
+import GameCard from '../../components/GameCard'
+import { Container } from './styles'
 
 function GameListingScreen() {
 	return (
 		<SafeAreaView>
-			<View>
-				<Text>Olá, Mundo!</Text>
-			</View>
+			<Container>
+				{/* TO DO: Replace with FlatList */}
+				<ScrollView>
+					<GameCard />
+				</ScrollView>
+			</Container>
 		</SafeAreaView>
 	)
 }
