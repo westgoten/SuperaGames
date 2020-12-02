@@ -1,14 +1,20 @@
-import { exp } from 'react-native/Libraries/Animated/src/Easing'
 import styled from 'styled-components/native'
 
 export const Card = styled.View`
 	background-color: white;
-	margin-start: 10px;
-	margin-end: 10px;
+	border-radius: 4px;
+	padding: 12px;
+	margin: 16px 12px 0 12px;
+`
+
+export const GameImage = styled.Image`
+	margin: 16px auto 28px auto;
 `
 
 export const Name = styled.Text``
 
-export const Price = styled.Text``
-
-export const AddToCartButton = styled.Button``
+export const Price = styled.Text`
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 12px;
+`

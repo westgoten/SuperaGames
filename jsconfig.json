@@ -4,7 +4,12 @@
 			{
 				"name": "typescript-styled-plugin",
 				"lint": {
-					"validProperties": ["margin-start", "margin-end"]
+					"validProperties": [
+						"margin-start",
+						"margin-end",
+						"padding-start",
+						"padding-end"
+					]
 				}
 			}
 		]
