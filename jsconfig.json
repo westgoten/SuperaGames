@@ -7,8 +7,11 @@
 					"validProperties": [
 						"margin-start",
 						"margin-end",
+						"margin-horizontal",
 						"padding-start",
-						"padding-end"
+						"padding-end",
+						"padding-vertical",
+						"elevation"
 					]
 				}
 			}

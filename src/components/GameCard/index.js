@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, GameImage, Name, Price, AddToCartButton } from './styles'
+import AddToCartButton from '../AddToCartButton'
+import { Card, GameImage, Name, Price } from './styles'
 
 function GameCard(props) {
 	return (
@@ -7,8 +8,9 @@ function GameCard(props) {
 			<GameImage
 				source={require('../../assets/the-witcher-iii-wild-hunt.png')}
 			/>
-			<Name>Game Name</Name>
-			<Price>Game Price</Price>
+			<Name>The Witcher III Wild Hunt</Name>
+			<Price>R$ 119,50</Price>
+			<AddToCartButton />
 		</Card>
 	)
 }
