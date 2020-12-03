@@ -1,4 +1,4 @@
-const loadedImages = {
+const imageReferences = {
 	'super-mario-odyssey.png': require('../../assets/super-mario-odyssey.png'),
 	'call-of-duty-infinite-warfare.png': require('../../assets/call-of-duty-infinite-warfare.png'),
 	'the-witcher-iii-wild-hunt.png': require('../../assets/the-witcher-iii-wild-hunt.png'),
@@ -10,4 +10,4 @@ const loadedImages = {
 	'horizon-zero-dawn.png': require('../../assets/horizon-zero-dawn.png')
 }
 
-export default loadedImages
+export default imageReferences
