@@ -11,7 +11,12 @@
 						"padding-start",
 						"padding-end",
 						"padding-vertical",
-						"elevation"
+						"elevation",
+						"shadow-color",
+						"shadow-offset",
+						"shadow-opacity",
+						"shadow-radius",
+						"end"
 					]
 				}
 			}
