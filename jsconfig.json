@@ -8,6 +8,7 @@
 						"margin-start",
 						"margin-end",
 						"margin-horizontal",
+						"margin-vertical",
 						"padding-start",
 						"padding-end",
 						"padding-vertical",
@@ -16,7 +17,8 @@
 						"shadow-offset",
 						"shadow-opacity",
 						"shadow-radius",
-						"end"
+						"end",
+						"resize-mode"
 					]
 				}
 			}

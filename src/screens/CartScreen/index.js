@@ -1,12 +1,17 @@
 import React from 'react'
-import { SafeAreaView, View, Text } from 'react-native'
+import { SafeAreaView } from 'react-native'
+import ScreenContainer from '../../components/ScreenContainer'
+import CartItem from '../../components/CartItem'
+import { CartCard } from './styles'
 
 function CartScreen() {
 	return (
 		<SafeAreaView>
-			<View>
-				<Text>Tchau, Mundo!</Text>
-			</View>
+			<ScreenContainer>
+				<CartCard>
+					<CartItem />
+				</CartCard>
+			</ScreenContainer>
 		</SafeAreaView>
 	)
 }

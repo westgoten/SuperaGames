@@ -1,7 +1,7 @@
 import React from 'react'
 import { SafeAreaView, FlatList } from 'react-native'
+import ScreenContainer from '../../components/ScreenContainer'
 import GameCard from '../../components/GameCard'
-import { Container } from './styles'
 import games from '../../data/products'
 
 function GameListingScreen() {
@@ -11,13 +11,13 @@ function GameListingScreen() {
 
 	return (
 		<SafeAreaView>
-			<Container>
+			<ScreenContainer>
 				<FlatList
 					data={games}
 					renderItem={renderItem}
 					keyExtractor={(item) => item.id.toString()}
 				/>
-			</Container>
+			</ScreenContainer>
 		</SafeAreaView>
 	)
 }

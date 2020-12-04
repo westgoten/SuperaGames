@@ -18,7 +18,7 @@ function Routes() {
 				backgroundColor={theme.statusBarColor}
 			/>
 			<Stack.Navigator
-				initialRouteName='GameListing'
+				initialRouteName='Cart'
 				screenOptions={{
 					title: 'Supera Games',
 					headerStyle: {

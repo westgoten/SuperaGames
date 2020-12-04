@@ -4,7 +4,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import AddToCartButton from '../AddToCartButton'
 import imageReferences from '../../utils/consts/imageReferences'
 import {
-	Card,
+	Container,
 	ImageWrapper,
 	GameImage,
 	Name,
@@ -20,7 +20,7 @@ function GameCard({ data, isLastCard }) {
 	})
 
 	return (
-		<Card isLastCard={isLastCard}>
+		<Container isLastCard={isLastCard}>
 			<ImageWrapper>
 				<GameImage source={imageReferences[data.image]} />
 				<ScoreWrapper>
@@ -33,7 +33,7 @@ function GameCard({ data, isLastCard }) {
 				{numberFormatter.format(data.price).split('$').join('$ ')}
 			</Price>
 			<AddToCartButton />
-		</Card>
+		</Container>
 	)
 }
 

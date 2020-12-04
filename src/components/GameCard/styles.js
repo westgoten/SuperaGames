@@ -1,17 +1,8 @@
 import styled from 'styled-components/native'
+import Card from '../Card'
 
-export const Card = styled.View`
-	background-color: white;
-	border-radius: 4px;
-	padding: 12px;
-	margin-horizontal: 12px;
-	margin-top: 16px;
+export const Container = styled(Card)`
 	margin-bottom: ${(props) => (props.isLastCard ? '16px' : 0)};
-	elevation: 1;
-	shadow-color: black;
-	shadow-offset: 1px 1px;
-	shadow-opacity: 0.5;
-	shadow-radius: 2px;
 `
 
 export const ImageWrapper = styled.View`
