@@ -24,7 +24,7 @@ function AddToCartButton() {
 				/>
 				<ItemCounter>0</ItemCounter>
 			</ItemsOnCart>
-			<ButtonText>Add to cart</ButtonText>
+			<ButtonText>Adicionar ao carrinho</ButtonText>
 		</Container>
 	)
 }

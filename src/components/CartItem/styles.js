@@ -1,28 +1,26 @@
 import styled from 'styled-components/native'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { removeItemButtonSize } from '../RemoveItemButton/styles'
 
-const deleteItemButtonSize = 18
-
-export const Container = styled.View``
+export const Container = styled.View`
+	margin-top: 16px;
+`
 
 export const ItemInfoContainer = styled.View`
 	flex-direction: row;
 	align-items: center;
-	padding: 8px;
+	padding-horizontal: 16px;
 `
 
 export const ItemImage = styled.Image`
-	width: 90px;
-	height: 90px;
+	width: 72px;
+	height: 72px;
 	resize-mode: contain;
-	margin-end: 8px;
+	margin-end: 16px;
 `
 
 export const TextContainer = styled.View`
-	justify-content: center;
 	flex: 1;
-	margin-end: ${deleteItemButtonSize + 12}px;
+	margin-end: ${removeItemButtonSize + 16}px;
 `
 
 export const Name = styled.Text``
@@ -32,13 +30,15 @@ export const Price = styled.Text`
 	font-weight: bold;
 `
 
-export const DeleteItemButton = styled(FontAwesomeIcon).attrs((props) => ({
-	icon: faTrash,
-	color: props.theme.secondaryColor,
-	size: deleteItemButtonSize
-}))`
-	position: absolute;
-	end: 12px;
+export const SubtotalContainer = styled.View`
+	background-color: #ededed;
+	padding: 8px;
+	flex-direction: row;
+	margin-top: 16px;
+	margin-horizontal: 8px;
+	border-radius: 4px;
 `
 
-export const SubtotalContainer = styled.View``
+export const Subtotal = styled(Price)`
+	margin-start: auto;
+`

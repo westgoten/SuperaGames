@@ -1,4 +1,6 @@
 import React from 'react'
+import ItemQuantityControls from '../ItemQuantityControls'
+import RemoveItemButton from '../RemoveItemButton'
 import {
 	Container,
 	ItemInfoContainer,
@@ -6,7 +8,8 @@ import {
 	Name,
 	Price,
 	TextContainer,
-	DeleteItemButton
+	SubtotalContainer,
+	Subtotal
 } from './styles'
 
 function CartItem() {
@@ -20,8 +23,12 @@ function CartItem() {
 					<Name numberOfLines={2}>The Witcher III Wild Hunt</Name>
 					<Price numberOfLines={1}>R$ 119,50</Price>
 				</TextContainer>
-				<DeleteItemButton />
+				<RemoveItemButton />
 			</ItemInfoContainer>
+			<SubtotalContainer>
+				<ItemQuantityControls />
+				<Subtotal>R$ 119,50</Subtotal>
+			</SubtotalContainer>
 		</Container>
 	)
 }
