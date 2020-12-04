@@ -34,7 +34,7 @@ export const ScoreWrapper = styled.View`
 	end: -4px;
 	min-width: 70px;
 	min-height: 50px;
-	border: 3px solid #fc4141;
+	border: 3px solid ${(props) => props.theme.primaryColor};
 	border-radius: 100px;
 	padding: 8px;
 	margin-top: 4px;
@@ -47,6 +47,6 @@ export const ScoreWrapper = styled.View`
 export const Score = styled.Text`
 	font-weight: bold;
 	font-size: 16px;
-	color: white;
+	color: ${(props) => props.theme.secondaryTextColor};
 	margin-start: 4px;
 `
