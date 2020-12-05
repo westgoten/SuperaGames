@@ -14,7 +14,7 @@ const contentContainerStyle = StyleSheet.create({
 })
 
 export const CartItemList = styled.FlatList.attrs((props) => {
-	return props.isListEmpty
+	return props.isCartEmpty
 		? { contentContainerStyle: contentContainerStyle.style }
 		: {}
 })`

@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native'
 import ScreenContainer from '../../components/ScreenContainer'
 import CartItem from '../../components/CartItem'
 import EmptyCartWarning from '../../components/EmptyCartWarning'
+import Checkout from '../../components/Checkout'
 import { CartCard, CartItemList } from './styles'
 import games from '../../data/products'
 
@@ -20,8 +21,9 @@ function CartScreen() {
 						renderItem={renderItem}
 						keyExtractor={(item) => item.id.toString()}
 						ListEmptyComponent={EmptyCartWarning}
-						isListEmpty={false}
+						isCartEmpty={false}
 					/>
+					<Checkout isCartEmpty={false} />
 				</CartCard>
 			</ScreenContainer>
 		</SafeAreaView>
