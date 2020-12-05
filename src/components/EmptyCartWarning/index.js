@@ -3,7 +3,7 @@ import {
 	Container,
 	Title,
 	Message,
-	GoBackToHomeButton,
+	GoBackToShoppingButton,
 	ButtonText
 } from './styles'
 
@@ -12,9 +12,9 @@ function EmptyCartWarning() {
 		<Container>
 			<Title>Oops...</Title>
 			<Message>Parece que seu carrinho está vazio!</Message>
-			<GoBackToHomeButton>
+			<GoBackToShoppingButton>
 				<ButtonText>Comece a comprar</ButtonText>
-			</GoBackToHomeButton>
+			</GoBackToShoppingButton>
 		</Container>
 	)
 }

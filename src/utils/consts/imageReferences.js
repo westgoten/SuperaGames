@@ -10,4 +10,4 @@ const imageReferences = {
 	'horizon-zero-dawn.png': require('../../assets/horizon-zero-dawn.png')
 }
 
-export default imageReferences
+export default Object.freeze(imageReferences)

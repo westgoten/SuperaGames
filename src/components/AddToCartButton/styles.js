@@ -22,7 +22,7 @@ export const ItemsOnCart = styled.View`
 
 export const ItemCounter = styled.Text`
 	color: ${(props) => props.theme.secondaryTextColor};
-	margin-start: 4px;
+	margin-start: 6px;
 `
 
 export const ButtonText = styled.Text`

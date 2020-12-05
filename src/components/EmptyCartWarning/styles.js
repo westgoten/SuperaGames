@@ -15,7 +15,7 @@ export const Message = styled.Text`
 	margin-bottom: 16px;
 `
 
-export const GoBackToHomeButton = styled(Button).attrs({
+export const GoBackToShoppingButton = styled(Button).attrs({
 	android_ripple: {
 		color: rippleEffectColor,
 		borderless: false,

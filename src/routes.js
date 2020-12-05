@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { ThemeContext } from 'styled-components/native'
 import GameListingScreen from './screens/GameListingScreen'
 import CartScreen from './screens/CartScreen'
+import HeaderButtons from './components/HeaderButtons'
+import { GameListing, Cart } from './utils/consts/routesNames'
 
 const Stack = createStackNavigator()
 
@@ -18,19 +20,20 @@ function Routes() {
 				backgroundColor={theme.statusBarColor}
 			/>
 			<Stack.Navigator
-				initialRouteName='Cart'
+				initialRouteName={GameListing}
 				screenOptions={{
 					title: 'Supera Games',
 					headerStyle: {
 						backgroundColor: theme.headerColor
 					},
-					headerTintColor: theme.headerTintColor
+					headerTintColor: theme.headerTintColor,
+					headerRight: () => <HeaderButtons />
 				}}>
 				<Stack.Screen
-					name='GameListing'
+					name={GameListing}
 					component={GameListingScreen}
 				/>
-				<Stack.Screen name='Cart' component={CartScreen} />
+				<Stack.Screen name={Cart} component={CartScreen} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)
