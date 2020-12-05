@@ -9,14 +9,8 @@ function AddToCartButton() {
 	const theme = useContext(ThemeContext)
 	const windowWidth = useWindowDimensions().width
 
-	// TO DO: Create a custom ripple effect to be used on both Android and iOS
 	return (
-		<Container
-			android_ripple={{
-				color: '#8c2424',
-				borderless: false,
-				radius: windowWidth
-			}}>
+		<Container windowWidth={windowWidth}>
 			<ItemsOnCart>
 				<FontAwesomeIcon
 					icon={faCartPlus}

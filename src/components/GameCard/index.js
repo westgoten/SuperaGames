@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import AddToCartButton from '../AddToCartButton'
 import imageReferences from '../../utils/consts/imageReferences'
+import formatNumberToBRL from '../../utils/formatNumberToBRL'
 import {
 	Container,
 	ImageWrapper,
@@ -13,25 +14,18 @@ import {
 	Score
 } from './styles'
 
-function GameCard({ data, isLastCard }) {
-	const numberFormatter = new Intl.NumberFormat('pt-BR', {
-		style: 'currency',
-		currency: 'BRL'
-	})
-
+function GameCard({ item, isLastCard }) {
 	return (
 		<Container isLastCard={isLastCard}>
 			<ImageWrapper>
-				<GameImage source={imageReferences[data.image]} />
+				<GameImage source={imageReferences[item.image]} />
 				<ScoreWrapper>
 					<FontAwesomeIcon icon={faStar} color='#fff432' />
-					<Score>{data.score}</Score>
+					<Score>{item.score}</Score>
 				</ScoreWrapper>
 			</ImageWrapper>
-			<Name numberOfLines={1}>{data.name}</Name>
-			<Price numberOfLines={1}>
-				{numberFormatter.format(data.price).split('$').join('$ ')}
-			</Price>
+			<Name numberOfLines={1}>{item.name}</Name>
+			<Price numberOfLines={1}>{formatNumberToBRL(item.price)}</Price>
 			<AddToCartButton />
 		</Container>
 	)

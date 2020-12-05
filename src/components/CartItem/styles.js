@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import { removeItemButtonSize } from '../RemoveItemButton/styles'
 
 export const Container = styled.View`
-	margin-top: 16px;
+	margin-top: ${(props) => (props.isFirstCard ? '16px' : '24px')};
 `
 
 export const ItemInfoContainer = styled.View`
@@ -35,7 +35,6 @@ export const SubtotalContainer = styled.View`
 	padding: 8px;
 	flex-direction: row;
 	margin-top: 16px;
-	margin-horizontal: 8px;
 	border-radius: 4px;
 `
 

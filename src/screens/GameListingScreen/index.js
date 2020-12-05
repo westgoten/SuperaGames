@@ -6,7 +6,7 @@ import games from '../../data/products'
 
 function GameListingScreen() {
 	const renderItem = ({ item, index }) => (
-		<GameCard data={item} isLastCard={index === games.length - 1} />
+		<GameCard item={item} isLastCard={index === games.length - 1} />
 	)
 
 	return (

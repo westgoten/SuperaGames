@@ -1,14 +1,14 @@
 import styled from 'styled-components/native'
+import Button, { rippleEffectColor } from '../Button'
 
-export const Container = styled.Pressable`
-	background-color: ${(props) => props.theme.primaryColor};
-	border-radius: 4px;
-	flex-direction: row;
-	elevation: 1;
-	shadow-color: black;
-	shadow-offset: 1px 1px;
-	shadow-opacity: 0.5;
-	shadow-radius: 2px;
+export const Container = styled(Button).attrs((props) => ({
+	android_ripple: {
+		color: rippleEffectColor,
+		borderless: false,
+		radius: props.windowWidth
+	}
+}))`
+	padding: 0;
 `
 
 export const ItemsOnCart = styled.View`
@@ -22,7 +22,7 @@ export const ItemsOnCart = styled.View`
 
 export const ItemCounter = styled.Text`
 	color: ${(props) => props.theme.secondaryTextColor};
-	margin-start: 8px;
+	margin-start: 4px;
 `
 
 export const ButtonText = styled.Text`

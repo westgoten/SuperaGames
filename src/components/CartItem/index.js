@@ -1,6 +1,8 @@
 import React from 'react'
 import ItemQuantityControls from '../ItemQuantityControls'
 import RemoveItemButton from '../RemoveItemButton'
+import imageReferences from '../../utils/consts/imageReferences'
+import formatNumberToBRL from '../../utils/formatNumberToBRL'
 import {
 	Container,
 	ItemInfoContainer,
@@ -12,22 +14,22 @@ import {
 	Subtotal
 } from './styles'
 
-function CartItem() {
+function CartItem({ item, isFirstCard }) {
 	return (
-		<Container>
+		<Container isFirstCard={isFirstCard}>
 			<ItemInfoContainer>
-				<ItemImage
-					source={require('../../assets/the-witcher-iii-wild-hunt.png')}
-				/>
+				<ItemImage source={imageReferences[item.image]} />
 				<TextContainer>
-					<Name numberOfLines={2}>The Witcher III Wild Hunt</Name>
-					<Price numberOfLines={1}>R$ 119,50</Price>
+					<Name numberOfLines={2}>{item.name}</Name>
+					<Price numberOfLines={1}>
+						{formatNumberToBRL(item.price)}
+					</Price>
 				</TextContainer>
 				<RemoveItemButton />
 			</ItemInfoContainer>
 			<SubtotalContainer>
 				<ItemQuantityControls />
-				<Subtotal>R$ 119,50</Subtotal>
+				<Subtotal>R$ 0,00</Subtotal>
 			</SubtotalContainer>
 		</Container>
 	)

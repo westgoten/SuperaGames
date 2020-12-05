@@ -14,7 +14,11 @@ function ItemQuantityControls() {
 			<MinusButton>
 				<MinusIcon />
 			</MinusButton>
-			<QuantityInput maxLength={3} keyboardType='number-pad' />
+			<QuantityInput
+				defaultValue='1'
+				maxLength={3}
+				keyboardType='number-pad'
+			/>
 			<PlusButton>
 				<PlusIcon />
 			</PlusButton>
