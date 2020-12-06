@@ -1,19 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { SafeAreaView, FlatList } from 'react-native'
 import ScreenContainer from '../../components/ScreenContainer'
 import GameCard from '../../components/GameCard'
-import games from '../../data/products'
 
 function GameListingScreen() {
+	const gamesForSale = useSelector((state) => state.gamesForSale)
+
 	const renderItem = ({ item, index }) => (
-		<GameCard item={item} isLastCard={index === games.length - 1} />
+		<GameCard item={item} isLastCard={index === gamesForSale.length - 1} />
 	)
 
 	return (
 		<SafeAreaView>
 			<ScreenContainer>
 				<FlatList
-					data={games}
+					data={gamesForSale}
 					renderItem={renderItem}
 					keyExtractor={(item) => item.id.toString()}
 				/>

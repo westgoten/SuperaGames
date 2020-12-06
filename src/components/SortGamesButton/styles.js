@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSortAmountUp } from '@fortawesome/free-solid-svg-icons'
+import Button from '../Button'
 
 const containerSize = 24
 
@@ -24,3 +25,7 @@ export const SortGamesIcon = styled(FontAwesomeIcon).attrs((props) => ({
 	color: props.theme.secondaryTextColor,
 	size: containerSize - 2
 }))``
+
+export const ModalButton = styled(Button)`
+	margin: auto;
+`

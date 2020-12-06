@@ -19,6 +19,7 @@
 						"shadow-opacity",
 						"shadow-radius",
 						"end",
+						"start",
 						"resize-mode"
 					]
 				}
