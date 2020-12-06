@@ -18,21 +18,25 @@ function CartItem({ item, isFirstCard }) {
 	return (
 		<Container isFirstCard={isFirstCard}>
 			<ItemInfoContainer>
-				<ItemImage source={imageReferences[item.image]} />
+				<ItemImage source={imageReferences[item.game.image]} />
 				<TextContainer>
-					<Name numberOfLines={2}>{item.name}</Name>
+					<Name numberOfLines={2}>{item.game.name}</Name>
 					<Price numberOfLines={1}>
-						{formatNumberToBRL(item.price)}
+						{formatNumberToBRL(item.game.price)}
 					</Price>
 				</TextContainer>
-				<RemoveItemButton />
+				<RemoveItemButton gameId={item.game.id} />
 			</ItemInfoContainer>
 			<SubtotalContainer>
-				<ItemQuantityControls />
-				<Subtotal>R$ 0,00</Subtotal>
+				<ItemQuantityControls item={item} />
+				<Subtotal>{formatNumberToBRL(calculateSubtotal())}</Subtotal>
 			</SubtotalContainer>
 		</Container>
 	)
+
+	function calculateSubtotal() {
+		return item.game.price * item.units
+	}
 }
 
 export default CartItem

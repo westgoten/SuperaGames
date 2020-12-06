@@ -1,13 +1,16 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { SafeAreaView } from 'react-native'
 import ScreenContainer from '../../components/ScreenContainer'
 import CartItem from '../../components/CartItem'
 import EmptyCartWarning from '../../components/EmptyCartWarning'
 import Checkout from '../../components/Checkout'
 import { CartCard, CartItemList } from './styles'
-import games from '../../data/products'
 
 function CartScreen() {
+	const cart = useSelector((state) => state.cart)
+	const isCartEmpty = cart.length === 0
+
 	const renderItem = ({ item, index }) => (
 		<CartItem item={item} isFirstCard={index === 0} />
 	)
@@ -17,13 +20,13 @@ function CartScreen() {
 			<ScreenContainer>
 				<CartCard>
 					<CartItemList
-						data={games}
+						data={cart}
 						renderItem={renderItem}
-						keyExtractor={(item) => item.id.toString()}
+						keyExtractor={(item) => item.game.id.toString()}
 						ListEmptyComponent={EmptyCartWarning}
-						isCartEmpty={false}
+						isCartEmpty={isCartEmpty}
 					/>
-					<Checkout isCartEmpty={false} />
+					<Checkout isCartEmpty={isCartEmpty} />
 				</CartCard>
 			</ScreenContainer>
 		</SafeAreaView>

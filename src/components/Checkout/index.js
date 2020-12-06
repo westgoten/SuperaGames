@@ -1,7 +1,10 @@
 import React from 'react'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import { useWindowDimensions } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { GameListing } from '../../utils/consts/routesNames'
+import { clearCart } from '../../actions/cartActions'
+import formatNumberToBRL from '../../utils/formatNumberToBRL'
 import {
 	Container,
 	SubtotalContainer,
@@ -17,7 +20,16 @@ import {
 	ButtonText
 } from './styles'
 
+const SHIPPING_COST_PER_UNIT = 10
+const FREE_SHIPPING_THRESHOLD = 250
+
 function Checkout({ isCartEmpty }) {
+	const dispatch = useDispatch()
+	const [subtotal, totalGameUnits] = useSelector(
+		selectCartCosts,
+		shallowEqual
+	)
+
 	const navigation = useNavigation()
 	const windowWidth = useWindowDimensions().width
 
@@ -25,15 +37,17 @@ function Checkout({ isCartEmpty }) {
 		<Container isCartEmpty={isCartEmpty}>
 			<SubtotalContainer>
 				<SubtotalText>Subtotal</SubtotalText>
-				<Subtotal>R$ 0,00</Subtotal>
+				<Subtotal>{formatNumberToBRL(subtotal)}</Subtotal>
 			</SubtotalContainer>
 			<ShippingContainer>
 				<ShippingText>Frete</ShippingText>
-				<Shipping>R$ 0,00</Shipping>
+				<Shipping>
+					{formatNumberToBRL(calculateShippingCost())}
+				</Shipping>
 			</ShippingContainer>
 			<TotalContainer>
 				<TotalText>Total</TotalText>
-				<Total>R$ 0,00</Total>
+				<Total>{formatNumberToBRL(calculateTotal())}</Total>
 			</TotalContainer>
 			<BuyButton windowWidth={windowWidth} onPress={buyAll}>
 				<ButtonText>Comprar tudo</ButtonText>
@@ -41,7 +55,29 @@ function Checkout({ isCartEmpty }) {
 		</Container>
 	)
 
+	function selectCartCosts(state) {
+		return state.cart.reduce(
+			(accumulator, cartItem) => {
+				accumulator[0] += cartItem.game.price * cartItem.units
+				accumulator[1] += cartItem.units
+				return accumulator
+			},
+			[0, 0]
+		)
+	}
+
+	function calculateShippingCost() {
+		return subtotal > FREE_SHIPPING_THRESHOLD
+			? 0
+			: SHIPPING_COST_PER_UNIT * totalGameUnits
+	}
+
+	function calculateTotal() {
+		return subtotal + calculateShippingCost()
+	}
+
 	function buyAll() {
+		dispatch(clearCart())
 		navigateToGameListingScreen()
 	}
 

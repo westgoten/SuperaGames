@@ -26,7 +26,7 @@ function GameCard({ item, isLastCard }) {
 			</ImageWrapper>
 			<Name numberOfLines={1}>{item.name}</Name>
 			<Price numberOfLines={1}>{formatNumberToBRL(item.price)}</Price>
-			<AddToCartButton />
+			<AddToCartButton item={item} />
 		</Container>
 	)
 }
