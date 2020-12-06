@@ -16,6 +16,7 @@ export const Container = styled.Pressable.attrs({
 	justify-content: center;
 	align-items: center;
 	margin-end: 24px;
+	display: ${(props) => (props.isHidden ? 'none' : 'flex')};
 `
 
 export const SortGamesIcon = styled(FontAwesomeIcon).attrs((props) => ({
