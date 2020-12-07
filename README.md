@@ -2,7 +2,7 @@
 
 _A games e-commerce app prototype made with React Native_
 
-![screenshot](./screenshots/app_screenshot.png)
+<img src='./screenshots/app_screenshot.png' style='max-width: 360px;' />
 
 ## Features
 
